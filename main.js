@@ -19,6 +19,7 @@ const mdOutput = document.getElementById('md-output')
 
 const toggleDisplayText = document.getElementById('toggle-display-text')
 const toggleDisplayHtml = document.getElementById('toggle-display-html')
+const toggleDisplayMd = document.getElementById('toggle-display-md')
 
 const toggleTheme = document.getElementById('toggle-theme')
 const rootEl = document.getElementById('root')
@@ -252,11 +253,11 @@ function init() {
     mainOutput.appendChild(parEl)
     cssOutput.textContent = styleHeader
     inputText.value = ''
-    inputFixation.value = Math.floor(parseInt(inputFixation.max) / 2)
+    inputFixation.value = 3
     inputSaccade.value = parseInt(inputSaccade.max)
     inputOpacity.value = parseInt(inputOpacity.max)
-    inputSize.value = 16
-    inputHeight.value = 24
+    inputSize.value = 17
+    inputHeight.value = 3
     inputSpacing.value = 0
     inputWeight1.value = 6
     inputWeight2.value = 3
