@@ -1,0 +1,116 @@
+<!doctype html>
+<html id="root" class="theme-light" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tech bros are on another world just make a framework like the rest of us.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bionic Reading</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Work+Sans:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="">
+            <h1>Bionic Reading</h1>
+        </a>
+    </header>
+    <main>
+        <div class="main-controls">
+            <div class="main-controls__row">
+                <div class="main-controls__control">
+                    <label for="input-text" class="label-margin">Text to be converted:</label>
+                    <textarea name="Text to be converted" id="input-text" cols="30" rows="5" dir="auto"></textarea>
+                </div>
+            </div>
+            <div class="main-controls__row">
+                <div class="main-controls__col">
+                    <div class="main-controls__control">
+                        <label for="input-fixation">Fixation</label>
+                        <input id="input-fixation" type="range" min="0" max="10">
+                    </div>
+                    <div class="main-controls__control">
+                        <label for="input-saccade">Saccade</label>
+                        <input id="input-saccade" type="range" min="0" max="10">
+                    </div>
+                    <div class="main-controls__control">
+                        <label for="input-opacity" for="">Opacity</label>
+                        <input id="input-opacity" type="range" min="0" max="100">
+                    </div>
+                </div>
+                <div class="main-controls__col">
+                    <div class="main-controls__control">
+                        <label for="input-size">Font Size</label>
+                        <input id="input-size" type="range" min="8" max="24">
+                    </div>
+                    <div class="main-controls__control">
+                        <label for="input-height">Line Height</label>
+                        <input id="input-height" type="range" min="0" max="8">
+                    </div>
+                    <div class="main-controls__control">
+                        <label for="input-spacing">Letter Spacing</label>
+                        <input id="input-spacing" type="range" min="0" max="16">
+                    </div>
+                </div>
+            </div>
+            <div class="main-controls__linebreak"></div>
+            <div class="main-controls__row">
+                <div class="main-controls__col">
+                    <div class="main-controls__control">
+                        <label for="input-weight1" for="">Bold Weight</label>
+                        <input id="input-weight1" type="range" min="0" max="8">
+                    </div>
+                </div>
+                <div class="main-controls__col">
+                    <div class="main-controls__control">
+                        <label for="input-weight2" for="">Light Weight</label>
+                        <input id="input-weight2" type="range" min="0" max="8">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main-output" class="main-output" dir="auto">
+            <p>Converted text:</p>
+        </div>
+        <div id="html-css-output-cont" style="display: none;" class="code-output">
+            <p>Converted HTML/CSS:<br>Include this code in your CSS file or &lt;style&gt; tag:</p>
+            <div>
+                <button class="copy-button" onclick="copyContent('css-output')">Copy CSS</button>
+                <div id="css-output" contenteditable="true"></div>
+            </div>
+            <p>Include this code in your HTML:</p>
+            <div>
+                <button class="copy-button" onclick="copyContent('html-output')">Copy HTML</button>
+                <div id="html-output" contenteditable="true"></div>
+            </div>
+        </div>
+        <div id="md-output-cont" style="display: none;" class="code-output">
+            <p>Converted Markdown</p>
+            <div>
+                <button class="copy-button" onclick="copyContent('md-output')">Copy Markdown</button>
+                <div id="md-output" contenteditable="true"></div>
+            </div>
+        </div>
+        <div class="fixed-controls top">
+            <button id="toggle-theme" class="toggle-theme light" onclick="switchTheme()"></button>
+        </div>
+        <div class="fixed-controls">
+            <button id="toggle-display-text" class="toggle-display" onclick="switchDisplay(0)">
+                <span class="mobile-hide">Text</span>
+            </button>
+            <button id="toggle-display-html" class="toggle-display" onclick="switchDisplay(1)">
+                <span class="mobile-hide">HTML/CSS</span>
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>Site source on <a href="https://github.com/mohammadshg84/bionic-reading" target="_blank">Github</a></p>
+    </footer>
+    <script src="lib/graphemeSplitter.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
